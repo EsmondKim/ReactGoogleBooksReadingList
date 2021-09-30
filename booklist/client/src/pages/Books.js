@@ -59,28 +59,8 @@ function Books() {
           <form>
             <Input
               onChange={handleInputChange}
-              name="title"
-              placeholder="Title (required)"
-            />
-            <Input
-              onChange={handleInputChange}
-              name="authors"
-              placeholder="Authors (required)"
-            />
-            <Input
-              onChange={handleInputChange}
-              name="description"
-              placeholder="Description (required)"
-            />
-            <Input
-              onChange={handleInputChange}
-              name="image"
-              placeholder="Image (required)"
-            />
-            <Input
-              onChange={handleInputChange}
-              name="link"
-              placeholder="Link (required)"
+              name="search"
+              placeholder="Search for a book"
             />
 
             <FormBtn

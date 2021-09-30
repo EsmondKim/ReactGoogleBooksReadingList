@@ -11,10 +11,10 @@ import { BrowserRouter } from "react-router-dom";
 function App() {
   return (
     <BrowserRouter>
-    <div>
-      <Nav />
-      <Books />
-    </div>
+      <div>
+        <Nav />
+        <Books />
+      </div>
     </BrowserRouter>
   );
 }

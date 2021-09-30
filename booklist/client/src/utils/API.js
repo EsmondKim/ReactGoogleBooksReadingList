@@ -1,6 +1,15 @@
 import axios from "axios";
 
 export default {
+  //Search the API
+  searchTerms: function (query) {
+    return axios.get(
+      "https://www.googleapis.com/books/v1/volumes?q=" +
+        query +
+        "+inauthor:keyes&key=AIzaSyAhN1f6C1m7zLkF1Y6eNY_DdmcEwEt5xJE"
+    );
+  },
+
   // Gets all books
   getBooks: function () {
     return axios.get("/api/books");
