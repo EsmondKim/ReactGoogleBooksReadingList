@@ -12,8 +12,8 @@ const bookSeed = [
     title: "I Hate The Packers",
     authors: "Aaron Rodgers",
     description: "2021 Season Chronicle",
-    image: "",
-    link: "",
+    image: "Dummy Image",
+    link: "HTML LINK",
   },
   // {
   //   title: "The Dead Zone",
