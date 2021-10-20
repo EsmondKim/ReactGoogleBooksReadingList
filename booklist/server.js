@@ -1,5 +1,5 @@
 const express = require("express");
-
+require("dotenv").config();
 const mongoose = require("mongoose");
 const routes = require("./routes");
 const app = express();
@@ -16,9 +16,11 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes);
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactreadinglist");
+mongoose.connect(
+  process.env.MONGODB_URI || "mongodb://localhost/reactreadinglist"
+);
 
 // Start the API server
-app.listen(PORT, function() {
+app.listen(PORT, function () {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
