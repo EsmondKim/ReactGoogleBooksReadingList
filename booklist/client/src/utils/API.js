@@ -8,7 +8,7 @@ export default {
 
     return axios
       .get(
-        `https://www.googleapis.com/books/v1/volumes?q=${query}+inauthor:keyes&key=${apiKey}`
+        `https://www.googleapis.com/books/v1/volumes?q=${query}&key=${apiKey}`
       )
       .then((res) => {
         const booklist = res.data.items;
