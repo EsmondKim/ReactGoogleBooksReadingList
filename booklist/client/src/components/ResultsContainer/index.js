@@ -10,7 +10,7 @@ function ResultsContainer(props) {
       picture={props.data.picture}
       synopsis={props.data.synopsis}
       link={props.data.link}
-      id={props.id}
+      id={props.data.key}
     />
   );
 }

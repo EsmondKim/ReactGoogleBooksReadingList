@@ -113,7 +113,7 @@ function Search() {
           <Col size="md-12">
             {console.log("hit that shit")}
             {bookResults.map((book) => {
-              return <ResultsContainer data={book} key={book.id} />;
+              return <ResultsContainer data={book} key={book.key} />;
             })}
             {console.log("past that shit")}
           </Col>
