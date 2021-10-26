@@ -111,13 +111,11 @@ function Search() {
           </Jumbotron>
 
           <Col size="md-12">
-            <ResultsContainer>
-              {console.log("hit that shit")}
-              {bookResults.map((book) => {
-                return <Results data={book} key={book.id} />;
-              })}
-              {console.log("past that shit")}
-            </ResultsContainer>
+            {console.log("hit that shit")}
+            {bookResults.map((book) => {
+              return <ResultsContainer data={book} key={book.id} />;
+            })}
+            {console.log("past that shit")}
           </Col>
 
           {/* {books.length ? (

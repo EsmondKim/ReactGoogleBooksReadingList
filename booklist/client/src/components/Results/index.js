@@ -1,5 +1,6 @@
 import React from "react";
 //import API from "../../utils/API";
+import ResultsContainer from "../ResultsContainer";
 import placeholder from "../../assets/images/placeholder.png";
 import { FormBtn } from "../Form";
 
@@ -11,14 +12,14 @@ function Results(props) {
           {props.picture === "placeholder" ? (
             <img className="bookImg" src={placeholder} alt="..." />
           ) : (
-            <img className="bookImg" src={props.data.picture} alt="..." />
+            <img className="bookImg" src={props.picture} alt="..." />
           )}
         </div>
         <div className="col-md-8">
           <div className="card-body">
-            <h5 className="card-title">{props.data.title}</h5>
-            <h5 className="card-title">{props.data.author}</h5>
-            <p className="card-text">{props.data.synopsis}</p>
+            <h5 className="card-title">{props.title}</h5>
+            <h5 className="card-title">{props.author}</h5>
+            <p className="card-text">{props.synopsis}</p>
           </div>
           <FormBtn
           // onClick={handleFormSubmit}

@@ -1,16 +1,17 @@
 import React from "react";
+import Results from "../Results";
 
-function ResultsContainer({ children }) {
+function ResultsContainer(props) {
   return (
-    <div
-      style={{
-        height: 300,
-        clear: "both",
-        textAlign: "center",
-      }}
-    >
-      {children}
-    </div>
+    <Results
+      className="results-container"
+      title={props.data.title}
+      author={props.data.author}
+      picture={props.data.picture}
+      synopsis={props.data.synopsis}
+      link={props.data.link}
+      id={props.id}
+    />
   );
 }
 
