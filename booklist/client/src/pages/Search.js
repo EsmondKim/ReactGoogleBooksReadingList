@@ -5,7 +5,7 @@ import API from "../utils/API";
 import { Col, Row, Container } from "../components/Grid";
 import useDebounce from "../utils/useDebounce";
 import Results from "../components/Results";
-
+import ResultsContainer from "../components/ResultsContainer";
 import DeleteBtn from "../components/DeleteBtn";
 import { Link, useParams } from "react-router-dom";
 import { List, ListItem } from "../components/List";
@@ -97,38 +97,29 @@ function Search() {
             <h1>Search for a book</h1>
           </Jumbotron>
           <SearchForm handleInputChange={handleInputChange} results={search} />
-          <FormBtn
+          {/* <FormBtn
 
           // disabled={!(formObject.authors && formObject.title)}
           // onClick={handleFormSubmit}
           >
             Submit Book
-          </FormBtn>
+          </FormBtn> */}
         </Col>
         <Col size="md-6 sm-12">
           <Jumbotron>
             <h1>Results</h1>
-            <Row>
-              <Col size="md-12">
-                <Jumbotron>
-                  {console.log("hit that shit")}
-                  {bookResults.map((book) => {
-                    return <Results data={book} key={book.id} />;
-                  })}
-                  {console.log("past that shit")}
-                  <h1>{/* {book.title} written by: {book.authors} */}</h1>
-                </Jumbotron>
-              </Col>
-            </Row>
-            <Row>
-              <Col size="md-10 md-offset-1">
-                <article>
-                  <h1>Description</h1>
-                  {/* <p>{book.description}</p> */}
-                </article>
-              </Col>
-            </Row>
           </Jumbotron>
+
+          <Col size="md-12">
+            <ResultsContainer>
+              {console.log("hit that shit")}
+              {bookResults.map((book) => {
+                return <Results data={book} key={book.id} />;
+              })}
+              {console.log("past that shit")}
+            </ResultsContainer>
+          </Col>
+
           {/* {books.length ? (
             <List>
               {books.map((book) => (
