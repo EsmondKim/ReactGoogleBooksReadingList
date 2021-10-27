@@ -3,6 +3,7 @@ import React from "react";
 import ResultsContainer from "../ResultsContainer";
 import placeholder from "../../assets/images/placeholder.png";
 import { FormBtn } from "../Form";
+import Button from "../../components/Button";
 
 function Results(props) {
   return (
@@ -21,15 +22,8 @@ function Results(props) {
             <h5 className="card-title">{props.author}</h5>
             <p className="card-text">{props.synopsis}</p>
           </div>
-          <FormBtn
-          // onClick={handleFormSubmit}
-          >
-            Delete
-          </FormBtn>
-          <FormBtn>
-            {/* onClick={handleFormSubmit} */}
-            View
-          </FormBtn>
+          <Button buttonTxt="View"></Button>
+          <Button buttonTxt="Delete"></Button>
         </div>
       </div>
     </div>
