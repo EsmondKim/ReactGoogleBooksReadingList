@@ -6,6 +6,19 @@ import { FormBtn } from "../Form";
 import Button from "../../components/Button";
 
 function Results(props) {
+  const viewLink = (event) => {
+    event.preventDefault();
+    window.location.href = props.link;
+  };
+
+  const saveBook = (event) => {
+    event.preventDefault();
+    API.saveBook(props.id)
+      .then((res) => console.log("Book saved!"))
+      .catch((err) => console.log(err));
+    window.location.href = "/saved";
+  };
+
   return (
     <div className="card mb-3" styles="max-width: 540px;">
       <div className="row g-0">
@@ -22,8 +35,8 @@ function Results(props) {
             <h5 className="card-title">{props.author}</h5>
             <p className="card-text">{props.synopsis}</p>
           </div>
-          <Button buttonTxt="View"></Button>
-          <Button buttonTxt="Delete"></Button>
+          <Button buttonTxt="View" function={viewLink}></Button>
+          <Button buttonTxt="Save"></Button>
         </div>
       </div>
     </div>
