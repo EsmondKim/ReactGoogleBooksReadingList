@@ -1,28 +1,22 @@
 import React from "react";
 import API from "../../utils/API";
 import placeholder from "../../assets/images/placeholder.png";
-import Button from "../../components/Button";
+import Button from "../Button";
 
-function Results(props) {
+function SavedResults(props) {
   const viewLink = (event) => {
     event.preventDefault();
     window.location.href = props.link;
   };
 
-  const saveBook = (event) => {
-    event.preventDefault();
-    API.saveBook({
-      title: props.title,
-      author: props.author,
-      picture: props.image,
-      synopsis: props.synopsis,
-      link: props.link,
-      id: props.id,
-    })
-      .then((res) => console.log(res, "Book saved!"))
-      .catch((err) => console.log(err));
-    //window.location.href = "/saved";
-  };
+  // This should become deleteBook function
+  // const saveBook = (event) => {
+  //     event.preventDefault();
+  //     API.saveBook(props.id)
+  //       .then((res) => console.log("Book saved!"))
+  //       .catch((err) => console.log(err));
+  //     window.location.href = "/saved";
+  //   };
 
   return (
     <div className="card mb-3" styles="max-width: 540px;">
@@ -41,11 +35,11 @@ function Results(props) {
             <p className="card-text">{props.synopsis}</p>
           </div>
           <Button buttonTxt="View" function={viewLink}></Button>
-          <Button buttonTxt="Save" function={saveBook}></Button>
+          <Button buttonTxt="Delete"></Button>
         </div>
       </div>
     </div>
   );
 }
 
-export default Results;
+export default SavedResults;

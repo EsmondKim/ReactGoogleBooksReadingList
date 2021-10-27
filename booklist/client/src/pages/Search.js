@@ -112,7 +112,9 @@ function Search() {
 
           <Col size="md-12">
             {bookResults.map((book) => {
-              return <ResultsContainer data={book} key={book.key} />;
+              return (
+                <ResultsContainer data={book} key={book.key} search={true} />
+              );
             })}
           </Col>
 
