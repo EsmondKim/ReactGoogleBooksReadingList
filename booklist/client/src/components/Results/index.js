@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import API from "../../utils/API";
 import placeholder from "../../assets/images/placeholder.png";
 import Button from "../../components/Button";
+import { toast, ToastContainer } from "react-toastify";
 import "./style.css";
 
 function Results(props) {
@@ -9,6 +10,9 @@ function Results(props) {
     event.preventDefault();
     window.location.href = props.link;
   };
+
+  const notifySuccess = () => toast("Book saved!");
+  const notifyFailure = () => toast("Can't save this kind of book. Sorry!");
 
   const saveBook = (event) => {
     event.preventDefault();
@@ -26,8 +30,15 @@ function Results(props) {
       link: props.link,
       id: props.id,
     })
-      .then((res) => console.log(res, "Book saved!"))
-      .catch((err) => console.log(err));
+      .then((res) => {
+        console.log(res, "Book saved!");
+        notifySuccess();
+      })
+      .catch((err) => {
+        console.log(err);
+        notifyFailure();
+      });
+
     //window.location.href = "/saved";
   };
 
@@ -49,6 +60,7 @@ function Results(props) {
           </div>
           <Button buttonTxt="View" function={viewLink}></Button>
           <Button buttonTxt="Save" function={saveBook}></Button>
+          <ToastContainer />
         </div>
       </div>
     </div>

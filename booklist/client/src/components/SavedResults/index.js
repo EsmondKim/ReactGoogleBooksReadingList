@@ -4,9 +4,12 @@ import API from "../../utils/API";
 import placeholder from "../../assets/images/placeholder.png";
 import Button from "../Button";
 import DeleteBtn from "../DeleteBtn";
+import { toast, ToastContainer } from "react-toastify";
 import "./style.css";
 
 function SavedResults(props) {
+  const notifyDelete = () => toast("Book deleted!");
+
   const viewLink = (event) => {
     event.preventDefault();
     window.location.href = props.link;
@@ -15,7 +18,10 @@ function SavedResults(props) {
   function deleteBook(id) {
     API.deleteBook(id)
       // .then((res) => loadSaved())
-      .then((res) => console.log("Book deleted."))
+      .then((res) => {
+        console.log("Book deleted.");
+        notifyDelete();
+      })
       .catch((err) => console.log(err));
     // console.log("Book deleted.");
   }
@@ -51,6 +57,7 @@ function SavedResults(props) {
               deleteBook(props.id);
             }}
           />
+          <ToastContainer />
         </div>
       </div>
     </div>
