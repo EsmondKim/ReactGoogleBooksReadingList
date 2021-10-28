@@ -10,6 +10,9 @@ function SearchForm(props) {
         <input
           value={props.search}
           onChange={props.handleInputChange}
+          onKeyPress={(e) => {
+            e.key === "Enter" && e.preventDefault();
+          }}
           name="term"
           list="term"
           type="text"

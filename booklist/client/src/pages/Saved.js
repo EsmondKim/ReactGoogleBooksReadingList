@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import API from "../utils/API";
 import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
-import ResultsContainer from "../components/ResultsContainer";
-import Results from "../components/Results";
+import SavedContainer from "../components/SavedContainer";
 
 function Saved() {
   const [savedBooks, setSavedBooks] = useState([]);
@@ -30,9 +29,7 @@ function Saved() {
           <Col size="md-12">
             {console.log("At Saved Books", savedBooks)}
             {savedBooks.map((book) => {
-              return (
-                <ResultsContainer data={book} key={book._id} search={false} />
-              );
+              return <SavedContainer data={book} key={book.id} />;
             })}
           </Col>
         </Col>

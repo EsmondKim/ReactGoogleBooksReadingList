@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import API from "../../utils/API";
 import placeholder from "../../assets/images/placeholder.png";
 import Button from "../../components/Button";
+import "./style.css";
 
 function Results(props) {
   const viewLink = (event) => {
@@ -11,10 +12,16 @@ function Results(props) {
 
   const saveBook = (event) => {
     event.preventDefault();
+    console.log(props.title);
+    console.log(props.author);
+    console.log(props.picture);
+    console.log(props.synopsis);
+    console.log(props.link);
+    console.log(props.id);
     API.saveBook({
       title: props.title,
       author: props.author,
-      picture: props.image,
+      picture: props.picture,
       synopsis: props.synopsis,
       link: props.link,
       id: props.id,

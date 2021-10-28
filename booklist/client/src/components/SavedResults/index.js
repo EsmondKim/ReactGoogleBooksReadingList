@@ -2,6 +2,7 @@ import React from "react";
 import API from "../../utils/API";
 import placeholder from "../../assets/images/placeholder.png";
 import Button from "../Button";
+import "./style.css";
 
 function SavedResults(props) {
   const viewLink = (event) => {

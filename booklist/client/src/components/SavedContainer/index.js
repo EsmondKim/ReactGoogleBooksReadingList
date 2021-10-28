@@ -1,19 +1,19 @@
 import React from "react";
-import Results from "../Results";
+import SavedResults from "../SavedResults";
 import "./style.css";
 
-function ResultsContainer(props) {
+function SavedContainer(props) {
   return (
-    <Results
-      className="results-container"
+    <SavedResults
+      className="saved-container"
       title={props.data.title}
       author={props.data.author}
       picture={props.data.picture}
       synopsis={props.data.synopsis}
       link={props.data.link}
-      id={props.data.key}
+      id={props.data.id}
     />
   );
 }
 
-export default ResultsContainer;
+export default SavedContainer;
