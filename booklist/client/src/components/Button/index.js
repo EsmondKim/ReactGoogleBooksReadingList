@@ -8,6 +8,7 @@ function Button(props) {
       type="button"
       className="btn btn-success"
       onClick={props.function}
+      id={props.id}
     >
       {props.buttonTxt}
     </button>

@@ -1,7 +1,9 @@
 import React from "react";
 import API from "../../utils/API";
+//import loadSaved from "../../pages/Saved";
 import placeholder from "../../assets/images/placeholder.png";
 import Button from "../Button";
+import DeleteBtn from "../DeleteBtn";
 import "./style.css";
 
 function SavedResults(props) {
@@ -9,6 +11,14 @@ function SavedResults(props) {
     event.preventDefault();
     window.location.href = props.link;
   };
+
+  function deleteBook(id) {
+    API.deleteBook(id)
+      // .then((res) => loadSaved())
+      .then((res) => console.log("Book deleted."))
+      .catch((err) => console.log(err));
+    // console.log("Book deleted.");
+  }
 
   // This should become deleteBook function
   // const saveBook = (event) => {
@@ -36,7 +46,11 @@ function SavedResults(props) {
             <p className="card-text">{props.synopsis}</p>
           </div>
           <Button buttonTxt="View" function={viewLink}></Button>
-          <Button buttonTxt="Delete"></Button>
+          <DeleteBtn
+            onClick={() => {
+              deleteBook(props.id);
+            }}
+          />
         </div>
       </div>
     </div>
