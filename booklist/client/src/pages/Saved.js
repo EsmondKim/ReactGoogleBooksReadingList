@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import API from "../utils/API";
-import { Col, Row, Container } from "../components/Grid";
+import { Col, Row } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
 import SavedContainer from "../components/SavedContainer";
 
@@ -17,7 +17,7 @@ function Saved() {
 
   useEffect(() => {
     loadSaved();
-  }, []);
+  }, [savedBooks]);
 
   return (
     <div>
@@ -27,7 +27,6 @@ function Saved() {
             <h1>Saved Books</h1>
           </Jumbotron>
           <Col size="md-12">
-            {console.log("At Saved Books", savedBooks)}
             {savedBooks.map((book) => {
               return <SavedContainer data={book} key={book.id} />;
             })}

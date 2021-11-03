@@ -38,8 +38,6 @@ function Results(props) {
         console.log(err);
         notifyFailure();
       });
-
-    //window.location.href = "/saved";
   };
 
   return (

@@ -17,10 +17,8 @@ const bookSchema = new Schema({
     unique: false,
   },
   link: {
-    type: {},
-    default: undefined,
+    type: String,
     required: false,
-    unique: false,
   },
   id: { type: String, default: "", unique: true },
 });

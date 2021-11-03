@@ -24,7 +24,7 @@ export default {
           if (index.saleInfo.buyLink) {
             buyLink = index.saleInfo.buyLink;
           } else {
-            buyLink = "Not Available";
+            buyLink = undefined;
           }
 
           return {
@@ -36,11 +36,6 @@ export default {
             key: index.id,
           };
         });
-        // setTitle(res.data[1][0]);
-        // setAuthors(res.data);
-        // setImage(res.data);
-        // setDescription(res.data);
-        // setLink([res.data.items]);
       })
       .catch((err) => console.log(err));
   },
