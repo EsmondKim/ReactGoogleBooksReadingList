@@ -1,6 +1,5 @@
 import React from "react";
 import API from "../../utils/API";
-//import loadSaved from "../../pages/Saved";
 import placeholder from "../../assets/images/placeholder.png";
 import Button from "../Button";
 import DeleteBtn from "../DeleteBtn";
@@ -17,23 +16,12 @@ function SavedResults(props) {
 
   function deleteBook(id) {
     API.deleteBook(id)
-      // .then((res) => loadSaved())
       .then((res) => {
         console.log("Book deleted.");
         notifyDelete();
       })
       .catch((err) => console.log(err));
-    // console.log("Book deleted.");
   }
-
-  // This should become deleteBook function
-  // const saveBook = (event) => {
-  //     event.preventDefault();
-  //     API.saveBook(props.id)
-  //       .then((res) => console.log("Book saved!"))
-  //       .catch((err) => console.log(err));
-  //     window.location.href = "/saved";
-  //   };
 
   return (
     <div className="card mb-3" styles="max-width: 540px;">

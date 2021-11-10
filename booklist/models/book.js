@@ -2,25 +2,28 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const bookSchema = new Schema({
-  title: { type: String, default: undefined, required: false, unique: false },
-  author: { type: Array, default: undefined, required: false, unique: false },
+  title: { type: String, unique: false, required: false },
+  author: { type: Array, unique: false, required: false },
   picture: {
     type: String,
-    default: "Placeholder",
-    required: false,
     unique: false,
+    required: false,
   },
   synopsis: {
     type: String,
-    default: undefined,
-    required: false,
     unique: false,
+    required: false,
   },
   link: {
     type: String,
+    unique: false,
     required: false,
   },
-  id: { type: String, default: "", unique: true },
+  id: {
+    type: String,
+    unique: false,
+    required: true,
+  },
 });
 
 const Book = mongoose.model("GoogleBookReadingList", bookSchema);

@@ -15,24 +15,26 @@ export default {
 
         return booklist.map((index) => {
           let thumbnail;
-          let buyLink;
+          // let buyLink;
           if (index.volumeInfo.imageLinks) {
             thumbnail = index.volumeInfo.imageLinks.thumbnail;
           } else {
             thumbnail = "placeholder";
           }
-          if (index.saleInfo.buyLink) {
-            buyLink = index.saleInfo.buyLink;
-          } else {
-            buyLink = undefined;
-          }
+          // if (index.saleInfo.buyLink) {
+          //   buyLink = index.saleInfo.buyLink;
+          // } else {
+          //   buyLink =
+          //     "Google Books API does not include a buy link for this book.";
+          // }
 
           return {
             title: index.volumeInfo.title,
             author: index.volumeInfo.authors,
             picture: thumbnail,
             synopsis: index.volumeInfo.description,
-            link: buyLink,
+            // link: buyLink,
+            link: index.saleInfo.buyLink,
             key: index.id,
           };
         });
