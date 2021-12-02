@@ -30,18 +30,18 @@ function Search() {
   return (
     <Container fluid>
       <Row>
-        <Col size="md-6">
+        <Col size="col-md-6">
           <Jumbotron>
-            <h1>Search for a book</h1>
+            <h2>Search for a book</h2>
           </Jumbotron>
           <SearchForm handleInputChange={handleInputChange} results={search} />
         </Col>
-        <Col size="md-6 sm-12">
+        <Col size="col-md-6 col-sm-12">
           <Jumbotron>
-            <h1>Results</h1>
+            <h2>Results</h2>
           </Jumbotron>
 
-          <Col size="md-12">
+          <Col size="col-md-12">
             {bookResults.map((book) => {
               return <ResultsContainer data={book} key={book.key} />;
             })}

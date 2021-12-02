@@ -24,6 +24,7 @@ const bookSchema = new Schema({
     unique: false,
     required: true,
   },
+  // date: { type: Date, default: Date.now },
 });
 
 const Book = mongoose.model("GoogleBookReadingList", bookSchema);

@@ -28,9 +28,9 @@ function SavedResults(props) {
       <div className="row g-0">
         <div className="col-md-4">
           {props.picture === "placeholder" ? (
-            <img className="bookImg" src={placeholder} alt="..." />
+            <img className="bookImg" src={placeholder} alt="placeholder" />
           ) : (
-            <img className="bookImg" src={props.picture} alt="..." />
+            <img className="bookImg" src={props.picture} alt={props.title} />
           )}
         </div>
         <div className="col-md-8">

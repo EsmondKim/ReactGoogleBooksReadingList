@@ -20,6 +20,7 @@ function SearchForm(props) {
           placeholder="Type in your search for a book"
           id="term"
         />
+        <p>*Search will run automatically when you stop typing.</p>
       </div>
     </form>
   );

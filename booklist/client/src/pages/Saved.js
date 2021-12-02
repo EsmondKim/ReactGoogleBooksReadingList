@@ -22,11 +22,11 @@ function Saved() {
   return (
     <div>
       <Row>
-        <Col size="md-6">
+        <Col size="col-md-6 offset-md-3">
           <Jumbotron>
             <h1>Saved Books</h1>
           </Jumbotron>
-          <Col size="md-12">
+          <Col size="col-md-12">
             {savedBooks.map((book) => {
               return <SavedContainer data={book} key={book.id} />;
             })}
