@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
+import useSavedBooks from "../../utils/useSavedBooks";
 import API from "../../utils/API";
 import placeholder from "../../assets/images/placeholder.png";
 import Button from "../../components/Button";
 import { toast, ToastContainer } from "react-toastify";
 import "./style.css";
+import { get } from "mongoose";
 
 function Results(props) {
   const viewLink = (event) => {
@@ -14,14 +16,24 @@ function Results(props) {
   const notifySuccess = () => toast("Book saved!");
   const notifyFailure = () => toast("Can't save this kind of book. Sorry!");
 
+  const { getSavedBooks, savedBooks } = useSavedBooks();
+
+  useEffect(() => {
+    getSavedBooks();
+    console.log(savedBooks);
+  }, [savedBooks]);
+
   const saveBook = (event) => {
     event.preventDefault();
-    console.log(props.title);
-    console.log(props.author);
-    console.log(props.picture);
-    console.log(props.synopsis);
-    console.log(props.link);
-    console.log(props.id);
+    // console.log(props.title);
+    // console.log(props.author);
+    // console.log(props.picture);
+    // console.log(props.synopsis);
+    // console.log(props.link);
+    // console.log(props.id);
+
+    // getSavedBooks();
+    // console.log("This is the custom hook", savedBooks);
 
     API.saveBook({
       title: props.title,
