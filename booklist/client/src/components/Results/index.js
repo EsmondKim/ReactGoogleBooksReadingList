@@ -23,7 +23,7 @@ function Results(props) {
 
   const { getSavedBooks, savedBooks } = useSavedBooks();
 
-  const idChecker = savedBooks;
+  const idChecker = Array.from(savedBooks);
 
   useEffect(() => {
     getSavedBooks();

@@ -1,5 +1,5 @@
 import React from "react";
-import Books from "./pages/Search";
+import Search from "./pages/Search";
 import Saved from "./pages/Saved";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
@@ -15,7 +15,7 @@ function App() {
         <Nav />
         <Switch>
           <Route exact path={["/", "/books"]}>
-            <Books />
+            <Search />
           </Route>
           <Route exact path={["/saved", "/saved"]}>
             <Saved />
