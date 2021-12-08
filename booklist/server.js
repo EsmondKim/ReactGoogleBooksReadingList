@@ -28,7 +28,7 @@ mongoose
     }
   )
   .then(() => console.log("\n\nMongoDB successfully connected\n\n"))
-  .catch((err) => console.log(err)) || "mongodb://localhost/GoogleBookAPIv1";
+  .catch((err) => console.log(err));
 
 // mongoose.connect(
 //   process.env.MONGODB_URI || "mongodb://localhost/GoogleBookAPIv1"
