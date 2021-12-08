@@ -1,10 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import useSavedBooks from "../../utils/useSavedBooks";
 import API from "../../utils/API";
 import placeholder from "../../assets/images/placeholder.png";
 import Button from "../../components/Button";
 import { toast, ToastContainer } from "react-toastify";
 import "./style.css";
+import { set } from "mongoose";
 
 function Results(props) {
   const viewLink = (event) => {
@@ -13,24 +14,28 @@ function Results(props) {
   };
 
   const notifySuccess = () => toast("Book saved!");
-  const notifyFailure = () =>
+  const notifyDuplicate = () =>
     toast("This book has already been saved!  Choose another!");
+  const notifyFailure = () =>
+    toast("Book failed to save due to database error!");
+
+  const [disable, setDisable] = useState(false);
 
   const { getSavedBooks, savedBooks } = useSavedBooks();
 
   const idChecker = savedBooks;
-  console.log(idChecker);
 
   useEffect(() => {
     getSavedBooks();
-    console.log(savedBooks);
   }, []);
 
   const saveBook = (event) => {
     event.preventDefault();
+    getSavedBooks();
     if (idChecker.filter((record) => record.id === props.id).length > 0) {
-      notifyFailure();
+      notifyDuplicate();
     } else {
+      setDisable(true);
       API.saveBook({
         title: props.title,
         author: props.author,
@@ -67,7 +72,11 @@ function Results(props) {
             <p className="card-text">{props.synopsis}</p>
           </div>
           <Button buttonTxt="View" function={viewLink}></Button>
-          <Button buttonTxt="Save" function={saveBook}></Button>
+          <Button
+            buttonTxt="Save"
+            function={saveBook}
+            doubleClickFunction={saveBook}
+          ></Button>
           <ToastContainer />
         </div>
       </div>
