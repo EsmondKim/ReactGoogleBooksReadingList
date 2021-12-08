@@ -72,11 +72,7 @@ function Results(props) {
             <p className="card-text">{props.synopsis}</p>
           </div>
           <Button buttonTxt="View" function={viewLink}></Button>
-          <Button
-            buttonTxt="Save"
-            function={saveBook}
-            doubleClickFunction={saveBook}
-          ></Button>
+          <Button buttonTxt="Save" function={saveBook}></Button>
           <ToastContainer />
         </div>
       </div>
