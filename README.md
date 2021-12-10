@@ -44,6 +44,8 @@ Please update any tests as appropriate.
 
 ## License
 
+![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)
+
 ## GitHub
 
 https://github.com/EsmondKim
