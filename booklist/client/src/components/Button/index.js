@@ -7,7 +7,7 @@ function Button(props) {
     <button
       className="button"
       type="button"
-      className="btn btn-success"
+      className="button, btn btn-success"
       onClick={props.function}
       id={props.id}
     >
