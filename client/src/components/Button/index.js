@@ -5,9 +5,8 @@ import "./style.css";
 function Button(props) {
   return (
     <button
-      className="button"
-      type="button"
       className="button, btn btn-success"
+      type="button"
       onClick={props.function}
       id={props.id}
     >
