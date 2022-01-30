@@ -6,7 +6,7 @@ import "./style.css";
 function DeleteBtn(props) {
   return (
     <span className="delete-btn, btn btn-danger" type="button" {...props}>
-      Delete
+      DELETE
     </span>
   );
 }
