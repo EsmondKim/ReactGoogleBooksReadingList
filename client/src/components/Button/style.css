@@ -1,5 +1,5 @@
 .button {
   float: "right";
-  height: 8px;
+  min-height: 8px;
   margin-bottom: 10;
 }
