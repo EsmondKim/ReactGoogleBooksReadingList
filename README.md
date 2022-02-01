@@ -21,8 +21,8 @@ I WANT an app that helps me find new titles to read,
 SO THAT I can save them to a Reading List.
 
 Sceenshots
-![Here is a screenshot of the React Google Books API Reading List Search page.](./booklist/client/src/assets/images/ScreenShot1.jpg)
-![Here is a screenshot of a Saved Reading List.](./booklist/client/src/assets/images/ScreenShot2.jpg)
+![Here is a screenshot of the React Google Books API Reading List Search page.](./client/src/assets/images/ScreenShot1.jpg)
+![Here is a screenshot of a Saved Reading List.](./client/src/assets/images/ScreenShot2.jpg)
 Deployed website:
 [Here is a link to the deployed website](https://googlebooksapireadinglist.herokuapp.com/)
 
